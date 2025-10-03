@@ -14,7 +14,84 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      onboarding_progress: {
+        Row: {
+          created_at: string
+          goals_set: boolean | null
+          id: string
+          knowledge_level: string | null
+          onboarding_completed: boolean | null
+          quiz_completed: boolean | null
+          quiz_score: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          goals_set?: boolean | null
+          id?: string
+          knowledge_level?: string | null
+          onboarding_completed?: boolean | null
+          quiz_completed?: boolean | null
+          quiz_score?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          goals_set?: boolean | null
+          id?: string
+          knowledge_level?: string | null
+          onboarding_completed?: boolean | null
+          quiz_completed?: boolean | null
+          quiz_score?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          daily_goal: number | null
+          educational_level: string
+          full_name: string
+          id: string
+          phone: string | null
+          preferred_study_times: string[] | null
+          school: string
+          study_streak: number | null
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          daily_goal?: number | null
+          educational_level: string
+          full_name: string
+          id: string
+          phone?: string | null
+          preferred_study_times?: string[] | null
+          school: string
+          study_streak?: number | null
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          daily_goal?: number | null
+          educational_level?: string
+          full_name?: string
+          id?: string
+          phone?: string | null
+          preferred_study_times?: string[] | null
+          school?: string
+          study_streak?: number | null
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
