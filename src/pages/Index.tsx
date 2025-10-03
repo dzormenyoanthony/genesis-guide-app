@@ -1,14 +1,32 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
-const Index = () => {
+export default function Index() {
+  const navigate = useNavigate();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 via-background to-secondary/20">
+      <div className="text-center space-y-8 p-8 max-w-2xl">
+        <div className="space-y-4">
+          <h1 className="text-5xl md:text-6xl font-bold">
+            Prepify AI
+          </h1>
+          <p className="text-xl md:text-2xl text-muted-foreground">
+            Your Personal Study Companion 🎓
+          </p>
+          <p className="text-lg text-muted-foreground max-w-xl mx-auto">
+            AI-powered tutoring, exam preparation, and homework help tailored for SHS and university students.
+          </p>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" onClick={() => navigate('/auth')}>
+            Get Started
+          </Button>
+          <Button size="lg" variant="outline" onClick={() => navigate('/auth')}>
+            Sign In
+          </Button>
+        </div>
       </div>
     </div>
   );
-};
-
-export default Index;
+}
